@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+  padding: 5px;
+}
+body {
+  background: hsl(222, 81%, 90%);
+}
+/* Title */
+
+.game-name {
+  border-radius: 10px;
+  max-width: 900px;
+  background: #4b7bec;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+}
+.game-name h1 {
+  color: #e4e4e4;
+}
+/* i fa-chess-king {
+  color: #fc5c65; transform: rotate(-25deg);
+} */
+
+/* Header */
+.header {
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+.timing {
+  background: #2c3a47;
+  color: #e4e4e4;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  grid-column: 1/2;
+  grid-row: 1/3;
+  border-radius: 10px;
+}
+.title {
+  margin-top: 30px;
+  text-align: center;
+}
+button {
+  /* border: 3px solid #55e6c1; */
+  cursor: pointer;
+  background: #2c3a47;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: #e4e4e4;
+}
+.content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+}
+.content .date {
+  text-align: center;
+}
+.contact-agent {
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border-radius: 5px;
+}
+
+.join-group {
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border-radius: 5px;
+}
+
+.countdown {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 10px auto;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  background: #4b7bec;
+}
+.content p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  /* border-bottom: 1px solid rgb(124, 124, 124); */
+}
+.countdown span {
+  border-top: 1px solid rgb(124, 124, 124);
+}
+.countdown .title {
+  color: #e4e4e4;
+}
+
+.days-container,
+.hours-container,
+.minutes-container,
+.seconds-container {
+  /* border: 3px solid #ddd; */
+  width: minmax(200px, auto);
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
+  color: #fc427b;
+  background: #f1f2f6;
+}
