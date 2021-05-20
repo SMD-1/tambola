@@ -209,12 +209,6 @@ body {
   margin-top: 5px;
   text-overflow: hidden;
   -webkit-line-clamp: 1;
-<<<<<<< HEAD
-=======
-}
-.loading-gif {
-  margin: 0 auto;
->>>>>>> 2580420e9df3dc947d610bf2176b9e3c7cbc76c9
 }
 .cell {
   border: 1px solid white;
