@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   padding: 5px;
 }
 body {
@@ -14,7 +14,7 @@ body {
 .game-name {
   border-radius: 10px;
   max-width: 900px;
-  background: #4b7bec;
+  background: #3B82F6;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -81,7 +81,12 @@ body {
 .title {
   text-align: center;
 }
+<<<<<<< HEAD
 button {
+=======
+.button {
+  /* border: 3px solid #55e6c1; */
+>>>>>>> b40d382b72a587a1238300e2a0333edde7353f8c
   cursor: pointer;
   background: #2c3a47;
   border-radius: 10px;
@@ -118,7 +123,7 @@ button {
   margin: 10px auto;
   border: 3px solid transparent;
   border-radius: 10px;
-  background: #4b7bec;
+  background: #3B82F6;
 }
 @media only screen and (max-width: 300px) {
   .countdown {
@@ -156,6 +161,60 @@ button {
   margin-left: 20px;
   border-radius: 10px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
   color: #4b7bec;
+=======
+  color: #3B82F6;
+>>>>>>> b40d382b72a587a1238300e2a0333edde7353f8c
   background: #f1f2f6;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  /* gap: 1px 1px; */
+  grid-template-areas:
+    '. . . . . . . . .'
+    '. . . . . . . . .'
+    '. . . . . . . . .'
+    '. . . . . . . df df';
+  text-align: center;
+  color: white;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.df {
+  grid-area: df;
+}
+
+.ticket-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 5px;
+  max-width: 900px;
+  margin: 10px auto;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  background: #3B82F6;
+}
+
+.buy-btn {
+  background: white;
+  color: #3B82F6;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-overflow: hidden;
+  -webkit-line-clamp:  1;
+}
+.loading-gif {
+  margin: 0 auto;
+}
+.cell {
+  border: 1px solid white;
+  padding: 10px 0px;
+  font-weight: bold;
 }
