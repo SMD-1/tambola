@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   padding: 5px;
 }
 body {
+  width: auto;
   background: hsl(222, 81%, 90%);
 }
 /* Title */
@@ -50,7 +51,7 @@ body {
   margin-top: 30px;
   text-align: center;
 }
-button {
+.button {
   /* border: 3px solid #55e6c1; */
   cursor: pointer;
   background: #2c3a47;
@@ -116,4 +117,47 @@ button {
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
   color: #fc427b;
   background: #f1f2f6;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  /* gap: 1px 1px; */
+  grid-template-areas:
+    '. . . . . . . . .'
+    '. . . . . . . . .'
+    '. . . . . . . . .'
+    '. . . . . . . df df';
+  text-align: center;
+  color: white;
+  min-width: 0;
+  overflow: hidden
+}
+
+.df {
+  grid-area: df;
+}
+
+.ticket-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 5px;
+  max-width: 900px;
+  margin: 10px auto;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  background: #4b7bec;
+}
+
+.buy-btn {
+padding: 5px;
+  background: white;
+  color: #4b7bec;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.loading-gif{
+  margin: 0 auto;
 }
