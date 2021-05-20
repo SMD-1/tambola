@@ -13,8 +13,8 @@ body {
 /* Title */
 .game-name {
   border-radius: 10px;
-  max-width: 900px;
-  background: #3B82F6;
+  max-width: 700px;
+  background: #3b82f6;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@ body {
   grid-template-columns: auto auto;
   grid-gap: 10px;
   border-radius: 10px;
-  max-width: 900px;
+  max-width: 700px;
   margin: 20px auto;
 }
 @media only screen and (max-width: 500px) {
@@ -81,12 +81,8 @@ body {
 .title {
   text-align: center;
 }
-<<<<<<< HEAD
-button {
-=======
 .button {
   /* border: 3px solid #55e6c1; */
->>>>>>> b40d382b72a587a1238300e2a0333edde7353f8c
   cursor: pointer;
   background: #2c3a47;
   border-radius: 10px;
@@ -116,14 +112,11 @@ button {
 }
 
 .countdown {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  max-width: 900px;
+  max-width: 700px;
   margin: 10px auto;
   border: 3px solid transparent;
   border-radius: 10px;
-  background: #3B82F6;
+  background: #3b82f6;
 }
 @media only screen and (max-width: 300px) {
   .countdown {
@@ -134,18 +127,12 @@ button {
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
-  border-bottom: 2px solid #6b7280;
+  border-bottom: 2px solid #3b82f6;
 }
 @media only screen and (max-width: 350px) {
   .content p,
   .content span {
     font-size: 0.8rem;
-  }
-  .days-container,
-  .hours-container,
-  .minutes-container,
-  .seconds-container {
-    margin-left: 10px;
   }
 }
 
@@ -158,26 +145,21 @@ button {
 .minutes-container,
 .seconds-container {
   width: minmax(200px, auto);
-  margin-left: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-  color: #4b7bec;
-=======
-  color: #3B82F6;
->>>>>>> b40d382b72a587a1238300e2a0333edde7353f8c
+  color: #3b82f6;
   background: #f1f2f6;
 }
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   /* gap: 1px 1px; */
   grid-template-areas:
     '. . . . . . . . .'
     '. . . . . . . . .'
-    '. . . . . . . . .'
-    '. . . . . . . df df';
+    '. . . . . . . . .';
   text-align: center;
   color: white;
   min-width: 0;
@@ -189,32 +171,77 @@ button {
 }
 
 .ticket-container {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  padding-bottom: 5px;
-  max-width: 900px;
+  position: relative;
+  padding: 10px;
+  max-width: 700px;
   margin: 10px auto;
   border: 3px solid #ddd;
   border-radius: 10px;
-  background: #3B82F6;
+  background: #3b82f6;
 }
-
+.ticket-container-sold{
+  background: rgba(191, 219, 254, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'Sold out!';
+  color: red;
+  /* transform:rotate(-20deg); */
+  font-size: 2em;
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left:0;
+  top:0;
+  z-index: 1000;
+}
+.ticket-header{
+}
+.ticket-footer{
+  display: flex;
+  flex-direction: row-reverse;
+}
 .buy-btn {
+  width:100px;
+  height:30px;
   background: white;
-  color: #3B82F6;
+  color: #3b82f6;
   border-radius: 10px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 5px;
   text-overflow: hidden;
-  -webkit-line-clamp:  1;
-}
-.loading-gif {
-  margin: 0 auto;
+  -webkit-line-clamp: 1;
 }
 .cell {
   border: 1px solid white;
   padding: 10px 0px;
   font-weight: bold;
+}
+.progress-bar-container {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+.progress-bar {
+  width: 60%;
+  height: 22px;
+  border-radius: 20px;
+  color: #3b82f6;
+  border: 2px solid;
+  position: relative;
+}
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: p 1.5s infinite;
+}
+@keyframes p {
+  100% {
+    inset: 0;
+  }
 }
