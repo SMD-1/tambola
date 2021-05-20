@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   padding: 5px;
 }
 body {
@@ -20,17 +20,12 @@ body {
   justify-content: center;
   align-items: center;
   letter-spacing: 2px;
+  padding: 10px 0;
 }
 .game-name .name {
   color: #e4e4e4;
-  font-size: x-large;
+  font-size: 1.5rem;
   font-weight: bold;
-}
-@media only screen and(max-width:400px) {
-  .game-name .name {
-    color: #e4e4e4;
-    font-size: large;
-  }
 }
 
 /* Header */
@@ -43,8 +38,8 @@ body {
   margin: 20px auto;
 }
 @media only screen and (max-width: 500px) {
-  .title {
-    font-size: 0.8rem;
+  .timing .title {
+    font-size: 1rem;
     margin-top: 10%;
   }
   .header {
@@ -52,7 +47,7 @@ body {
     padding: 0;
   }
   .timing .content {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .join-group .content,
   .contact-agent .content {
@@ -60,8 +55,8 @@ body {
   }
 }
 @media only screen and (max-width: 340px) {
-  .title {
-    font-size: 0.6rem;
+  .timing .title {
+    font-size: 0.8rem;
     margin-top: 20%;
   }
   .join-group,
@@ -80,6 +75,8 @@ body {
 }
 .title {
   text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .button {
   /* border: 3px solid #55e6c1; */
@@ -212,6 +209,12 @@ body {
   margin-top: 5px;
   text-overflow: hidden;
   -webkit-line-clamp: 1;
+<<<<<<< HEAD
+=======
+}
+.loading-gif {
+  margin: 0 auto;
+>>>>>>> 2580420e9df3dc947d610bf2176b9e3c7cbc76c9
 }
 .cell {
   border: 1px solid white;
