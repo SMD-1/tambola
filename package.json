@@ -1,0 +1,23 @@
+{
+  "name": "tambola",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SMD-1/tambola.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SMD-1/tambola/issues"
+  },
+  "homepage": "https://github.com/SMD-1/tambola#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

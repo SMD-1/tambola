@@ -1,101 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tambola</title>
-  <!--           CSS           -->
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambola</title>
+    <!--           CSS           -->
+    <link rel="stylesheet" href="style.css" />
 
-  <!--           Font Awesome          -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!--           Font Awesome          -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <!-- Tailwind CDN -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
-  <!--    animate.style -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <!--    animate.style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <!--    Game Name    -->
+    <div class="game-name">
+      <h1>Tambola King</h1>
+      <i
+        class="fas fa-chess-king fa-2x"
+        style="color: #ff6348; transform: rotate(-25deg)"
+      ></i>
+    </div>
 
-</head>
-<body>
-  <!--    Game Name    -->
-  <div class="game-name">
-    <h1>Tambola King</h1>
-    <i class="fas fa-chess-king fa-2x" style="color: #ff6348; transform: rotate(-25deg);"></i>
-  </div>
+    <!--     Header     -->
+    <div class="header">
+      <!-- Timing -->
 
-  <!--     Header     -->
-  <div class="header">
-    <!-- Timing -->
-    <div class="timing">
-      <div class="title">
-        <h2>Game Timing</h2>
-      </div>
-      <div class="content">
+      <div class="timing">
+        <div class="title">
+          <div class="md:text-3xl">Game Timing</div>
+        </div>
+        <div class="content">
           <div class="icon">
-            <i class="far fa-calendar-alt fa-3x" style="color: #FD7272;"></i>
+            <i class="far fa-calendar-alt fa-3x" style="color: #fd7272"></i>
           </div>
           <div class="date">
-            <h4>24/05/2021</h4>
-            <h5>9:00 PM</h5>
+            <div class="md:text-3xl">24/05/2021</div>
+            <div class="md:text-2xl">9:00 PM</div>
           </div>
+        </div>
+      </div>
+
+      <!-- Whatsapp Group -->
+      <div class="button">
+        <div class="join-group">
+          <div class="content">
+            <h2>Join Whatsapp Group</h2>
+            <i class="fab fa-whatsapp fa-3x" style="color: #55e6c1"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact-agent -->
+      <div class="button">
+        <div class="contact-agent">
+          <div class="content">
+            <h2>Contact Agents</h2>
+            <i class="fas fa-address-book fa-3x" style="color: #1b9cfc"></i>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Whatsapp Group -->
-    <button>
-      <div class="join-group">
-        <div class="content">
-          <h2>Join Whatsapp Group </h2>
-          <i class="fab fa-whatsapp fa-3x" style="color: #55E6C1;"></i>
-        </div>
+    <!--    Countdown    -->
+    <div class="countdown">
+      <div class="title" style="margin-top: 0">
+        <h2>Next Game Start in :</h2>
       </div>
-    </button>
-    
-    <!-- Contact-agent -->
-    <button>
-      <div class="contact-agent">
-        <div class="content">
-          <h2>Contact Agents </h2>
-          <i class="fas fa-address-book fa-3x" style="color: #1B9CFC;"></i>
-        </div>
-      </div>
-    </button>
-    
-    
-  </div>
 
-  <!--    Countdown    -->
-  <div class="countdown">
-    <div class="title" style="margin-top: 0;">
-      <h2>Next Game Start in :</h2>
-    </div>
-
-    <div class="content">
-      <div class="days-container">
-        <p class="big-text " id="days" >0</p>
-        <span>Days</span>
-      </div>
-      <div class="hours-container">
-          <p class="big-text" id="hours" >0</p>
+      <div class="content">
+        <div class="days-container">
+          <p class="big-text" id="days">0</p>
+          <span>Days</span>
+        </div>
+        <div class="hours-container">
+          <p class="big-text" id="hours">0</p>
           <span>Hours</span>
-      </div>
-      <div class="minutes-container">
-          <p class="big-text" id="minutes" >0</p>
-          <span>Minutes</span>
-      </div>
-      <div class="seconds-container">
-          <p class="big-text animate__animated animate__fadeInDown infinite" id="seconds" >0</p>
-          <span>Seconds</span>
+        </div>
+        <div class="minutes-container">
+          <p class="big-text" id="minutes">0</p>
+          <span>Mins</span>
+        </div>
+        <div class="seconds-container">
+          <p
+            class="big-text animate__animated animate__fadeInDown infinite"
+            id="seconds"
+          >
+            0
+          </p>
+          <span>Secs</span>
+        </div>
       </div>
     </div>
-  </div>
-
-
-  
-
-
-  <script src="app.js"></script>
-</body>
+    <img class="loading-gif" src='./assets/loading.gif'/>
+    <div id="tickets-container" style="overflo w-y: auto; height: 500px">
+      <div id="ticket-container"></div>
+      
+    </div>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
