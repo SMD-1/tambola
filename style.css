@@ -7,7 +7,6 @@
   padding: 5px;
 }
 body {
-  width: auto;
   background: hsl(222, 81%, 90%);
 }
 /* Title */
@@ -15,7 +14,7 @@ body {
 .game-name {
   border-radius: 10px;
   max-width: 900px;
-  background: #4b7bec;
+  background: #3B82F6;
   margin: 10px auto;
   display: flex;
   justify-content: center;
@@ -91,7 +90,7 @@ body {
   margin: 10px auto;
   border: 3px solid #ddd;
   border-radius: 10px;
-  background: #4b7bec;
+  background: #3B82F6;
 }
 .content p {
   text-align: center;
@@ -115,7 +114,7 @@ body {
   margin-left: 20px;
   border-radius: 10px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
-  color: #fc427b;
+  color: #3B82F6;
   background: #f1f2f6;
 }
 .grid-container {
@@ -131,7 +130,7 @@ body {
   text-align: center;
   color: white;
   min-width: 0;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .df {
@@ -148,16 +147,23 @@ body {
   margin: 10px auto;
   border: 3px solid #ddd;
   border-radius: 10px;
-  background: #4b7bec;
+  background: #3B82F6;
 }
 
 .buy-btn {
-padding: 5px;
   background: white;
-  color: #4b7bec;
+  color: #3B82F6;
   border-radius: 10px;
   font-weight: bold;
+  margin-top: 10px;
+  text-overflow: hidden;
+  -webkit-line-clamp:  1;
 }
-.loading-gif{
+.loading-gif {
   margin: 0 auto;
+}
+.cell {
+  border: 1px solid white;
+  padding: 10px 0px;
+  font-weight: bold;
 }

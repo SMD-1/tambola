@@ -15,15 +15,11 @@ function createAndAppendTicket(ticketString) {
     console.log(ticketArray)
     const ticketContainer = document.getElementById('ticket-container')
     const ticketbody =  document.createElement('div')
-    ticketbody.classList.add('grid-container', 'countdown', 'ticket-container')
+    ticketbody.classList.add('grid-container', 'ticket-container')
     ticketArray.forEach(ele1 => {
         ele1.forEach(ele2 => {
-            const ticket = document.createElement('div')
             const cell = document.createElement('div')
-            cell.style.border = '1px solid white'
-            cell.style.padding = '10px'
-            cell.style.fontSize = '25px'
-            cell.style.fontWeight = 'bold'
+            cell.classList.add('cell', 'md:text-xl', 'lg:text-3xl', 'text-sm')
             if (ele2 == null)
                 cell.innerHTML = "&nbsp;"
 
@@ -39,7 +35,12 @@ function createAndAppendTicket(ticketString) {
 
 function bottomComponent(){
     const comp = document.createElement("button")
-    comp.classList.add('buy-btn', 'df')
-    comp.innerHTML = 'Buy Now!'
+    comp.classList.add('buy-btn', 'df', 
+                'bg-white', 'text-blue-500', 'font-semibold',
+                'rounded-lg', 'shadow-md', 'hover:bg-blue-400', 'md:py-2',
+                'hover:text-white', 'focus:outline-none','transition', 'duration-300', 'ease-in-out'
+                )
+
+    comp.innerHTML = 'Buy!'
     return comp
 }
