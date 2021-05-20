@@ -4,7 +4,7 @@ const MinutesEl = document.getElementById('minutes');
 const SecondsEl = document.getElementById('seconds');
 
 
-const birthDay = '24 May 2021 9:00 PM';
+const birthDay = '28 May 2021 9:00 PM';
 
 function countDown(){
 	const birthDayDate = new Date(birthDay);

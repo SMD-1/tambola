@@ -9,8 +9,8 @@
 body {
   background: hsl(222, 81%, 90%);
 }
-/* Title */
 
+/* Title */
 .game-name {
   border-radius: 10px;
   max-width: 900px;
@@ -21,16 +21,20 @@ body {
   align-items: center;
   letter-spacing: 2px;
 }
-.game-name h1 {
+.game-name .name {
   color: #e4e4e4;
+  font-size: x-large;
+  font-weight: bold;
 }
-/* i fa-chess-king {
-  color: #fc5c65; transform: rotate(-25deg);
-} */
+@media only screen and(max-width:400px) {
+  .game-name .name {
+    color: #e4e4e4;
+    font-size: large;
+  }
+}
 
 /* Header */
 .header {
-  /* border: 1px solid rgba(0, 0, 0, 0.5); */
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 10px;
@@ -38,6 +42,34 @@ body {
   max-width: 900px;
   margin: 20px auto;
 }
+@media only screen and (max-width: 500px) {
+  .title {
+    font-size: 0.8rem;
+    margin-top: 10%;
+  }
+  .header {
+    margin-left: 0;
+    padding: 0;
+  }
+  .timing .content {
+    font-size: 0.6rem;
+  }
+  .join-group .content,
+  .contact-agent .content {
+    font-size: 0.5rem;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .title {
+    font-size: 0.6rem;
+    margin-top: 20%;
+  }
+  .join-group,
+  .contact-agent {
+    padding: 0%;
+  }
+}
+
 .timing {
   background: #2c3a47;
   color: #e4e4e4;
@@ -47,11 +79,9 @@ body {
   border-radius: 10px;
 }
 .title {
-  margin-top: 30px;
   text-align: center;
 }
 button {
-  /* border: 3px solid #55e6c1; */
   cursor: pointer;
   background: #2c3a47;
   border-radius: 10px;
@@ -69,14 +99,12 @@ button {
   text-align: center;
 }
 .contact-agent {
-  /* border: 1px solid rgba(0, 0, 0, 0.5); */
   grid-column: 2/3;
   grid-row: 1/2;
   border-radius: 5px;
 }
 
 .join-group {
-  /* border: 1px solid rgba(0, 0, 0, 0.5); */
   grid-column: 2/3;
   grid-row: 2/3;
   border-radius: 5px;
@@ -88,19 +116,34 @@ button {
   align-items: center;
   max-width: 900px;
   margin: 10px auto;
-  border: 3px solid #ddd;
+  border: 3px solid transparent;
   border-radius: 10px;
   background: #4b7bec;
+}
+@media only screen and (max-width: 300px) {
+  .countdown {
+    overflow: scroll;
+  }
 }
 .content p {
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
-  /* border-bottom: 1px solid rgb(124, 124, 124); */
+  border-bottom: 2px solid #6b7280;
 }
-.countdown span {
-  border-top: 1px solid rgb(124, 124, 124);
+@media only screen and (max-width: 350px) {
+  .content p,
+  .content span {
+    font-size: 0.8rem;
+  }
+  .days-container,
+  .hours-container,
+  .minutes-container,
+  .seconds-container {
+    margin-left: 10px;
+  }
 }
+
 .countdown .title {
   color: #e4e4e4;
 }
@@ -109,11 +152,10 @@ button {
 .hours-container,
 .minutes-container,
 .seconds-container {
-  /* border: 3px solid #ddd; */
   width: minmax(200px, auto);
   margin-left: 20px;
   border-radius: 10px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
-  color: #fc427b;
+  color: #4b7bec;
   background: #f1f2f6;
 }
