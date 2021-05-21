@@ -54,10 +54,10 @@ function createAndAppendTicket(ticket) {
         })
     })
     //if ticket bought then grey it out
-    if (ticket.bought_by != 'Not Booked') {
+    if (ticket.customer_name != 'Not Booked') {
         const soldOutComp = document.createElement('div')
         soldOutComp.classList.add('ticket-container-sold', 'text-center', 'animate__animated','animate__bounceIn')
-        soldOutComp.innerHTML= 'Bought by <br>' + ticket.bought_by
+        soldOutComp.innerHTML= 'Bought by <br>' + ticket.customer_name
         ticketbody.appendChild(soldOutComp)
     }
     else {
