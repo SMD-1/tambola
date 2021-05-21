@@ -2,20 +2,44 @@
 
 axios.get('https://housie.plasmatch.in/api/tickets/')
     .then(res => {
-        const loadingGIF = document.querySelector('.loading-gif')
-        loadingGIF.remove()
+        const progress = document.querySelector('.progress-bar-container')
+        progress.remove()
         res.data.forEach(ele => {
-            createAndAppendTicket(ele.ticket)
+            createAndAppendTicket(ele)
 
         })
     })
 
-function createAndAppendTicket(ticketString) {
-    const ticketArray = JSON.parse(ticketString)
-    console.log(ticketArray)
-    const ticketContainer = document.getElementById('ticket-container')
-    const ticketbody =  document.createElement('div')
-    ticketbody.classList.add('grid-container', 'ticket-container')
+function createAndAppendTicket(ticket) {
+    var ticketString = ticket.ticket
+    var ticketArray = JSON.parse(ticketString)
+
+    const ticketsContainer = document.getElementById('tickets-container')
+
+    const ticketbody = document.createElement('div')
+    const cellContainer = document.createElement('div')
+
+    const ticketHeader = document.createElement('div')
+    const ticketFooter = document.createElement('div')
+    ticketFooter.classList.add('ticket-footer')
+
+    ticketHeader.innerText = 'Ticket #' + ticket.ticket_id
+    ticketHeader.classList.add('ticket-header', 'text-xl', 'text-white', 'z-40')
+
+    //appending ticket id 
+    ticketbody.appendChild(ticketHeader)
+
+    ticketbody.classList.add('ticket-container')
+    cellContainer.classList.add('grid-container')
+
+    // console.log('started')
+    // ticketArray.forEach(ele =>{
+    //     ele.forEach(ele2 =>{
+    //     })
+    // })
+    // console.log('okay now ended')
+
+    //looping through rows and cols to append cells
     ticketArray.forEach(ele1 => {
         ele1.forEach(ele2 => {
             const cell = document.createElement('div')
@@ -26,21 +50,35 @@ function createAndAppendTicket(ticketString) {
             else
                 cell.innerHTML = ele2
 
-            ticketbody.appendChild(cell)
+            cellContainer.appendChild(cell)
         })
     })
-    ticketbody.appendChild(bottomComponent())
-    ticketContainer.appendChild(ticketbody)
+    //if ticket bought then grey it out
+    if (ticket.bought_by != 'Not Booked') {
+        const soldOutComp = document.createElement('div')
+        soldOutComp.classList.add('ticket-container-sold')
+        soldOutComp.innerHTML= 'Bought by ' + ticket.bought_by
+        ticketbody.appendChild(soldOutComp)
+    }
+    else {
+        setTimeout(() => {
+            ticketFooter.appendChild(bottomComponent())
+        }, 1000);
+    }
+    ticketbody.appendChild(cellContainer)
+    ticketbody.appendChild(ticketFooter)
+    ticketsContainer.appendChild(ticketbody)
 }
 
-function bottomComponent(){
+function bottomComponent() {
     const comp = document.createElement("button")
-    comp.classList.add('buy-btn', 'df', 
-                'bg-white', 'text-blue-500', 'font-semibold',
-                'rounded-lg', 'shadow-md', 'hover:bg-blue-400', 'md:py-2',
-                'hover:text-white', 'focus:outline-none','transition', 'duration-300', 'ease-in-out'
-                )
+    comp.classList.add('buy-btn',
+        'bg-white', 'text-blue-500', 'font-semibold',
+        'rounded-lg', 'shadow-md', 'hover:bg-blue-400',
+        'hover:text-white', 'focus:outline-none', 'transition',
+        'duration-300', 'ease-in-out',
+    )
 
-    comp.innerHTML = 'Buy!'
+    comp.innerHTML = 'Buy'
     return comp
 }

@@ -30,35 +30,38 @@
   <body>
     <!--    Game Name    -->
     <div class="game-name">
-      <div class="name">
-        Tambola King
-      </div>
-      <i class="fas fa-chess-king fa-2x" style="color: #ff6348; transform: rotate(-25deg)"></i>
+      <div class="text-3xl text-white">Tambola King</div>
+      <i
+        class="fas fa-chess-king fa-2x"
+        style="color: #ff6348; transform: rotate(-25deg)"
+      ></i>
     </div>
 
+    <!--     Header     -->
     <div class="header">
-       <!-- Timing  -->
+      <!-- Timing -->
+
       <div class="timing">
         <div class="title">
-          Game Timing
+          <div class="text-base text-lg md:text-2xl">Game Timing</div>
         </div>
         <div class="content">
           <div class="icon">
             <i class="far fa-calendar-alt fa-3x" style="color: #fd7272"></i>
           </div>
           <div class="date">
-            <div>24/05/2021</div>
-            <div>9:00 PM</div>
+            <div class="text-sm md:text-2xl">24/05/2021</div>
+            <div class="text-sm md:text-1xl">9:00 PM</div>
           </div>
         </div>
       </div>
 
-      <!-- Whatsapp Group  -->
+      <!-- Whatsapp Group -->
       <div class="button">
         <div class="join-group">
-          <div class="content">
-            <h2>Join Whatsapp Group </h2>
-            <i class="fab fa-whatsapp fa-3x animate__animated animate__tada" style="color: #55E6C1;"></i>
+          <div class="flex align-center justify-center">
+            <span class="text-md md:text-2xl flex items-center">Join Group</span>
+            <i class="fab fa-whatsapp fa-3x" style="color: #55e6c1"></i>
           </div>
         </div>
       </div>
@@ -66,22 +69,24 @@
       <!-- Contact-agent -->
       <div class="button">
         <div class="contact-agent">
-            <div class="content">
-              <h2>Contact Agents</h2>
-              <i class="fas fa-address-book fa-3x" style="color: #1b9cfc"></i>
-            </div>
+          <div class="flex align-center justify-center">
+            <span class="text-md md:text-2xl flex items-center">Contact Agents</span>
+
+            <i class="fas fa-address-book fa-3x" style="color: #1b9cfc"></i>
+          </div>
         </div>
       </div>
 
     </div>
 
-      <!-- Countdown     -->
+    <!--    Countdown    -->
     <div class="countdown">
       <div class="title" style="margin-top: 0">
-        <div>Next Game Start in :</div>
+        <h2>Next Game Start in :</h2>
       </div>
-      <div class="content">
-        <div class="days-container" style="margin-left: 0%;">
+
+      <div class="content flex justify-evenly">
+        <div class="days-container">
           <p class="big-text" id="days">0</p>
           <span>Days</span>
         </div>
@@ -99,9 +104,11 @@
         </div>
       </div>
     </div>
-    <img class="loading-gif" src="./assets/loading.gif" />
-    <div id="tickets-container" style="overflow: y-auto; height: 500px">
-      <div id="ticket-container"></div>
+    <!-- <img class="loading-gif" src="./assets/loading.gif" /> -->
+    <div class="progress-bar-container">
+      <div class="progress-bar"></div>
+    </div>
+    <div id="tickets-container" style="overflow-y: auto; height: 500px">
     </div>
     <script src="app.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
