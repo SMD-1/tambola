@@ -15,10 +15,10 @@ function countDown(){
 	const minutes = Math.floor((totalSeconds / 60) % 60);
 	const seconds = Math.floor((totalSeconds) % 60);
 
-	DaysEl.innerText = format(days);
-	HoursEl.innerText = format(hours);
-	MinutesEl.innerText = format(minutes);
-	SecondsEl.innerText = format(seconds);
+	DaysEl.innerHTML = format(days);
+	HoursEl.innerHTML = format(hours);
+	MinutesEl.innerHTML = format(minutes);
+	SecondsEl.innerHTML = format(seconds);
 }
 
 
@@ -31,3 +31,10 @@ function format(time){
 countDown(); 
 
 setInterval(countDown,1000);
+
+const contactAgents = document.querySelector('.contact-agent');
+
+contactAgents.addEventListener('click', () => {
+// console.log('clicked!');
+location.href = "./contact-agent.html";
+});
