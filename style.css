@@ -1,11 +1,10 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Titillium Web", sans-serif; */
-  font-family: "Reggae One", cursive;
+  font-family: "Titillium Web", sans-serif;
   padding: 5px;
 }
 body {
