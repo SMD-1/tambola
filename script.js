@@ -30,6 +30,7 @@ function createAndAppendTicket(ticket) {
     ticketbody.appendChild(ticketHeader)
 
     ticketbody.classList.add('ticket-container')
+    ticketbody.setAttribute('data-aos', "fade-up")
     cellContainer.classList.add('grid-container')
 
     // console.log('started')
@@ -56,8 +57,8 @@ function createAndAppendTicket(ticket) {
     //if ticket bought then grey it out
     if (ticket.customer_name != 'Not Booked') {
         const soldOutComp = document.createElement('div')
-        soldOutComp.classList.add('ticket-container-sold', 'text-center', 'animate__animated','animate__bounceIn')
-        soldOutComp.innerHTML= 'Bought by <br>' + ticket.customer_name
+        soldOutComp.classList.add('ticket-container-sold', 'text-center', 'animate__animated', 'animate__bounceIn')
+        soldOutComp.innerHTML = 'Bought by <br>' + ticket.customer_name
         ticketbody.appendChild(soldOutComp)
     }
     else {

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SMD-1/tambola#readme",
   "dependencies": {
+    "aos": "^2.3.4",
     "axios": "^0.21.1"
   }
 }

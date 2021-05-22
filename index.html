@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tambola</title>
     <!-- <a href="https://ptprashanttripathi.github.io/linkpe?pn=Danish&pa=8595098223%40ybl&amt=&cu=INR" class="upi-pay1">Pay Now !</a> -->
-    
+
     <!-- <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HDOWyCST8NXEbK" async> </script> </form> -->
     <!--           CSS           -->
     <link rel="stylesheet" href="style.css" />
@@ -29,6 +29,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <!--    Game Name    -->
@@ -41,9 +42,9 @@
     </div>
 
     <!--     Header     -->
+  </div>
     <div class="header">
       <!-- Timing -->
-
       <div class="timing">
         <div class="title">
           <div class="text-base text-lg md:text-2xl">Game Timing</div>
@@ -63,7 +64,9 @@
       <div class="button">
         <div class="join-group">
           <div class="flex align-center justify-center">
-            <span class="text-md md:text-2xl flex items-center">Join Group</span>
+            <span class="text-md md:text-2xl flex items-center"
+              >Join Group</span
+            >
             <i class="fab fa-whatsapp fa-3x" style="color: #55e6c1"></i>
           </div>
         </div>
@@ -73,13 +76,14 @@
       <div class="button">
         <div class="contact-agent">
           <div class="flex align-center justify-center">
-            <span class="text-md md:text-2xl flex items-center">Contact Agents</span>
+            <span class="text-md md:text-2xl flex items-center"
+              >Contact Agents</span
+            >
 
             <i class="fas fa-address-book fa-3x" style="color: #1b9cfc"></i>
           </div>
         </div>
       </div>
-
     </div>
 
     <!--    Countdown    -->
@@ -98,11 +102,16 @@
           <span>Hours</span>
         </div>
         <div class="minutes-container">
-          <p class="big-text" id="minutes" >0</p>
+          <p class="big-text" id="minutes">0</p>
           <span>Mins</span>
         </div>
         <div class="seconds-container">
-          <p class="big-text animate__animated animate__fadeInDown infinite" id="seconds" >0</p>
+          <p
+            class="big-text animate__animated animate__fadeInDown infinite"
+            id="seconds"
+          >
+            0
+          </p>
           <span>Secs</span>
         </div>
       </div>
@@ -111,34 +120,15 @@
     <div class="progress-bar-container">
       <div class="progress-bar"></div>
     </div>
-    <div class='pt-10 text-4xl text-center text-blue-500'>Tickets</div>
-    <div id="tickets-container" style="height: 500px">
-    </div>
+    <div class="pt-10 text-4xl text-center text-blue-500">Tickets</div>
+    <div id="tickets-container" style="height: 500px"></div>
     <script src="app.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init()
+    </script>
+
+    <script src="script.js" type="module"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
