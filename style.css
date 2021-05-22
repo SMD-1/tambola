@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
+  /* font-family: "Titillium Web", sans-serif; */
+  font-family: "Reggae One", cursive;
   padding: 5px;
 }
 body {
@@ -115,11 +117,11 @@ body {
   border-radius: 10px;
   background: #3b82f6;
 }
-@media only screen and (max-width: 300px) {
+/* @media only screen and (max-width: 300px) {
   .countdown {
     overflow: scroll;
   }
-}
+} */
 .content p {
   text-align: center;
   font-weight: bold;
@@ -133,9 +135,9 @@ body {
   }
 }
 
-.countdown .title {
+/* .countdown .title {
   color: #e4e4e4;
-}
+} */
 
 .days-container,
 .hours-container,
@@ -241,4 +243,38 @@ body {
   100% {
     inset: 0;
   }
+}
+
+/*       Numbers       */
+.cell-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* gap: 1px 1px; */
+  grid-template-areas:
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . ."
+    ". . . . . . . . .";
+  text-align: center;
+  color: white;
+  min-width: 0;
+  overflow: hidden;
+}
+.ticket-number {
+  max-width: 320px;
+  margin: 5px auto;
+}
+
+.ticket-number button,
+.ticket-number button {
+  background: #60a5fa;
+  outline: none;
+  border: none;
 }
