@@ -1,6 +1,8 @@
 'use strict'
 
-axios.get('https://housie.plasmatch.in/api/tickets/')
+import { getAllTickets } from './api.config.js'
+
+axios.get(getAllTickets)
     .then(res => {
         const progress = document.querySelector('.progress-bar-container')
         progress.remove()
@@ -83,3 +85,10 @@ function bottomComponent() {
     comp.innerHTML = 'Buy'
     return comp
 }
+
+const contactAgents = document.querySelector(".contact-agent");
+
+contactAgents.addEventListener("click", () => {
+    // console.log('clicked!');
+    location.href = "./contact-agent.html";
+});

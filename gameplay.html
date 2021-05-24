@@ -21,28 +21,16 @@
       integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
       crossorigin="anonymous"
     />
-
+    <!--    animate.style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>game-play</title>
 
-    <style>
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas:
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . ."
-          ". . . . . . . . .";
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <!--    Game name    -->
@@ -58,7 +46,7 @@
     </div>
 
     <!--    Countdown    -->
-    <div class="countdown">
+    <!-- <div class="countdown">
       <div class="title text-gray-100" style="margin-top: 0">
         <h2 class="text-gray-100">Next Game Start in :</h2>
       </div>
@@ -86,9 +74,9 @@
           <span>Secs</span>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!--       Numbers     -->
+    <!--       Numbers Grid     -->
     <div
       class="number-container bg-blue-500 p-3 rounded-lg"
       style="max-width: 700px; margin: 1rem auto"
@@ -108,7 +96,6 @@
           grid grid-rows-2
           justify-items-center
           grid-span-2
-          border-b-2 border-gray-100
           max-w-xs
         "
       >
@@ -116,29 +103,116 @@
           <input
             type="number"
             placeholder="Enter ticket Number"
+            id="ticket-input"
             class="p-2 rounded-lg"
           />
         </div>
         <div class="clear-button col-start-1 col-end-2 row-start-2 row-end-3">
           <button
-            class="px-4 py-2 rounded-lg text-gray-100 shadow-xl font-bold"
+            class="
+              px-10
+              py-2
+              bg-white
+              text-white
+              font-semibold
+              rounded-lg
+              shadow-md
+              hover:bg-white
+              hover:text-blue-500
+              focus:outline-none
+              transition
+              duration-300
+              ease-in-out
+            "
+            id="clear-ticket-button"
           >
             Clear
           </button>
         </div>
         <div class="view-button col-start-2 col-end-3 row-start-2 row-end-3">
           <button
-            class="px-4 py-2 rounded-lg text-gray-100 shadow-xl font-bold"
+            class="
+              px-10
+              py-2
+              bg-white
+              text-white
+              font-semibold
+              rounded-lg
+              shadow-md
+              hover:bg-white
+              hover:text-blue-500
+              focus:outline-none
+              transition
+              duration-300
+              ease-in-out
+              ok
+            "
+            id="view-ticket-button"
           >
             View
           </button>
         </div>
       </div>
+      <div id="search-tickets-container" ></div>
+    </div>
+    <div class="divide-x divide-green-500">
+      <h1 class="mt-10 text-center text-2xl text-blue-500">Winners</h1>
 
-      <div></div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">Quick 5</h1>
+        <div id="winner-Q5"></div>
+      </div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">Top Row</h1>
+        <div id="winner-TR"></div>
+      </div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">Middle Row</h1>
+        <div id="winner-MR"></div>
+      </div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">Bottom Row</h1>
+        <div id="winner-BR"></div>
+      </div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">Corner Row</h1>
+        <div id="winner-CO"></div>
+      </div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">First Full House👑</h1>
+        <div id="winner-HF"></div>
+      </div>
+      <div
+        class="view-tickets bg-blue-500 rounded-lg"
+        style="max-width: 700px; margin: 1rem auto"
+      >
+        <h1 class="text-center text-2xl text-gray-100">Second Full House👑</h1>
+        <div id="winner-SHF"></div>
+      </div>
     </div>
 
-    <script src="gameplay.js"></script>
-    <script src="app.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="gameplay.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+    <!-- <script src="countdown.js" defer></script> -->
   </body>
 </html>

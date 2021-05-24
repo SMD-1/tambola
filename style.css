@@ -216,6 +216,10 @@ body {
   padding: 10px 0px;
   font-weight: bold;
 }
+.marked-cell{
+  background-color: #529926;
+  transition:.5s;
+}
 .progress-bar-container {
   margin: 50px auto;
   display: flex;
@@ -245,27 +249,8 @@ body {
 }
 
 /*       Numbers       */
-.cell-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* gap: 1px 1px; */
-  grid-template-areas:
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . ."
-    ". . . . . . . . .";
-  text-align: center;
-  color: white;
-  min-width: 0;
-  overflow: hidden;
-}
+
+
 .ticket-number {
   max-width: 320px;
   margin: 5px auto;
