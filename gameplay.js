@@ -70,8 +70,8 @@ function markStrikes() {
 function speak(text) {
   console.log('speaking = ' + text)
   var msg = new SpeechSynthesisUtterance(text);
-  msg.volume = .5;
-  msg.rate = 5;
+  msg.volume = 1;
+  msg.rate = 3;
   window.speechSynthesis.speak(msg);
 }
 function removeOldTickets(className) {
@@ -154,8 +154,8 @@ function refresh() {
         let numbersJson = JSON.parse(res.data.drawn_numbers_list)
         let lastNumber = numbersJson[numbersJson.length - 1]
         // console.log(res.data.last_played_num, lastNumber)
-        // const speakText = `${res.data.last_played_num}, ${lastNumber}`
-        const speakText = `${lastNumber}`
+        const speakText = `${res.data.last_played_num}, ${lastNumber}`
+        //const speakText = `${lastNumber}`
         speak(speakText)
       }
 
