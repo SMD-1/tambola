@@ -70,8 +70,8 @@ function markStrikes() {
 function speak(text) {
   console.log('speaking = ' + text)
   var msg = new SpeechSynthesisUtterance(text);
-  msg.volume = .5;
-  msg.rate = 5;
+  msg.volume = 1;
+  msg.rate = 3;
   window.speechSynthesis.speak(msg);
 }
 function removeOldTickets(className) {
