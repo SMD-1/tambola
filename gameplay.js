@@ -154,8 +154,8 @@ function refresh() {
         let numbersJson = JSON.parse(res.data.drawn_numbers_list)
         let lastNumber = numbersJson[numbersJson.length - 1]
         // console.log(res.data.last_played_num, lastNumber)
-        // const speakText = `${res.data.last_played_num}, ${lastNumber}`
-        const speakText = `${lastNumber}`
+        const speakText = `${res.data.last_played_num}, ${lastNumber}`
+        //const speakText = `${lastNumber}`
         speak(speakText)
       }
 
