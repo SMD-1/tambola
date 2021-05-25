@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--           Font Awesome          -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <!-- Tailwind CDN -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Payment</title>
+  </head>
+  <body>
+    <div
+      class="
+        flex
+        justify-center
+        text-5xl text-center text-gray-100
+        max-w-3xl
+        mx-auto
+        my-5
+        p-4
+        bg-purple-700
+        font-semibold
+        rounded-lg
+      "
+      style="font-family: Arial, Helvetica, sans-serif"
+    >
+      <span> Payment </span>
+    </div>
+
+    <!--    Payment body    -->
+
+    <!--nav  -->
+    <div class="max-w-3xl mx-auto p-3 border-3 bg-purple-700 rounded-lg">
+      <div class="flex flex-row items-center mt-6">
+        <a href="./index.html"
+          ><i class="fas fa-times fa-2x text-gray-100 p-4 rounded-lg"></i
+        ></a>
+        <h2
+          class="mx-auto text-gray-100 text-2xl"
+          style="font-family: monospace; letter-spacing: 5px"
+        >
+          QR CODE
+        </h2>
+      </div>
+
+      <!--    QR CODES      -->
+      <div class="qr-codes">
+        <div class="qr-container flex justify-center items-center mt-12">
+          <div class="grid place-content-center bg-white p-4 rounded-2xl">
+            <div>
+              <img src="./assets/gpayUPI.png" alt="gpay" />
+            </div>
+            <div class="footer text-center">
+              <div class="text">
+                <span class="text-xl text-gray-800">Scan to pay on: </span>
+              </div>
+              <div class="icon">
+                <i class="fab fa-google-pay fa-3x mt-3 text-gray-800"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qr-container flex justify-center items-center mt-6">
+          <div class="grid place-content-center bg-white p-4 rounded-2xl">
+            <div>
+              <img src="./assets/phonepeUPI.png" alt="PhonePe" />
+            </div>
+            <div class="footer text-center">
+              <div class="text">
+                <span class="text-xl text-gray-800">Scan to pay on: </span>
+              </div>
+              <div class="icon text-3xl mt-3">PhonePe</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
