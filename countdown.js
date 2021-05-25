@@ -1,4 +1,3 @@
-//const { gamesStatus } = require('./api.config.js')
 import { gamesStatus } from './api.config.js'
 
 const DaysEl = document.getElementById("days");

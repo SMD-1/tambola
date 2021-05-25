@@ -8,11 +8,10 @@ axios.get(getAllTickets)
         progress.remove()
         res.data.forEach(ele => {
             createAndAppendTicket(ele)
-
         })
     })
 
-function createAndAppendTicket(ticket) {
+async function createAndAppendTicket(ticket) {
     var ticketString = ticket.ticket
     var ticketArray = JSON.parse(ticketString)
 
@@ -32,7 +31,9 @@ function createAndAppendTicket(ticket) {
     ticketbody.appendChild(ticketHeader)
 
     ticketbody.classList.add('ticket-container')
-    ticketbody.setAttribute('data-aos', "fade-up")
+
+    //using aos class in each ticket is very expensive so removed its
+    //ticketbody.setAttribute('data-aos', "fade-up")
     cellContainer.classList.add('grid-container')
 
     // console.log('started')
