@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambola</title>
+
+    <!--           CSS           -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--           Font Awesome          -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <!-- Tailwind CDN -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!--    animate.style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body class="bg-blue-200 h-screen">
+    <div>
+      <!--    Game Name    -->
+      <div class="game-name">
+        <div
+          class="text-3xl text-white"
+          style="font-family: Reggae One, cursive"
+        >
+          Tambola King
+        </div>
+        <i
+          class="fas fa-chess-king fa-2x"
+          style="color: #ff6348; transform: rotate(-25deg)"
+        ></i>
+      </div>
+    </div>
+    <div class="text-3xl text-center">Agent login</div>
+    <!-- component -->
+    <div
+      class="
+        bg-white
+        shadow-md
+        mt-20
+        max-w-screen-sm
+        rounded-lg
+        px-8
+        pt-6
+        pb-8
+        mb-4
+        flex flex-col
+      "
+      style="margin: 3em auto"
+    >
+      <div class="mb-4">
+        <label
+          class="block text-grey-darker text-sm font-bold mb-2"
+          for="username"
+        >
+          Email
+        </label>
+        <input
+          class="
+            shadow
+            appearance-none
+            border
+            rounded
+            w-full
+            py-2
+            px-3
+            text-grey-darker
+          "
+          id="email"
+          type="text"
+          placeholder="Email"
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          class="block text-grey-darker text-sm font-bold mb-2"
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          class="
+            shadow
+            appearance-none
+            border border-red
+            rounded
+            w-full
+            py-2
+            px-3
+            text-grey-darker
+            mb-3
+          "
+          id="password"
+          type="password"
+          placeholder="************"
+        />
+        <!-- <p class="text-red text-xs italic">Please choose a password.</p> -->
+      </div>
+      <div class="flex flex-row-reverse items-center justify-between">
+        <button
+          class="
+            bg-blue-500
+            text-white
+            font-semibold
+            px-10
+            py-2
+            rounded-lg
+            shadow-md
+            hover:white
+            hover:blue-500
+            focus:outline-none
+            transition
+            duration-300
+            ease-in-out
+          "
+          type="button"
+          id="sign-in-btn"
+        >
+          Sign In
+        </button>
+        <!-- <a
+          class="
+            inline-block
+            align-baseline
+            font-bold
+            text-sm text-blue
+            hover:text-blue-darker
+          "
+          href="#"
+        >
+          Forgot Password?
+        </a> -->
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module">
+      import { getToken } from './api.config.js'
+
+      const signInBtn = document.getElementById('sign-in-btn')
+      signInBtn.addEventListener('click', () => {
+        if (email == '' && password == '') return
+        signIn()
+      })
+      function signIn() {
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+        let payload = {
+          username: email,
+          password: password,
+        }
+        axios.post(getToken, payload).then((res) => {
+          console.log(res.data)
+          localStorage.setItem('user', JSON.stringify(res.data))
+          window.location  = 'agent-portal.html';
+        })
+        .catch(err=>{
+            alert('Please check your credentials!')
+        })
+      }
+    </script>
+  </body>
+</html>
