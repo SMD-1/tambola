@@ -29,8 +29,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <!--    Game Name    -->
@@ -55,8 +53,8 @@
             <i class="far fa-calendar-alt fa-3x" style="color: #fd7272"></i>
           </div>
           <div class="date">
-            <div class="text-sm md:text-2xl">24/05/2021</div>
-            <div class="text-sm md:text-1xl">9:00 PM</div>
+            <div id="game-date" class="text-sm md:text-2xl">24/05/2021</div>
+            <div id="game-time" class="text-sm md:text-1xl">9:00 PM</div>
           </div>
         </div>
       </div>
@@ -124,11 +122,6 @@
     <div class="pt-10 text-4xl text-center text-blue-500">Tickets</div>
     <div id="tickets-container" style="height: 500px"></div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init()
-    </script>
-    
     <script src="countdown.js" type="module"></script>
     <script src="script.js" type="module"></script>
   </body>

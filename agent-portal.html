@@ -28,69 +28,324 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body>
-    <!--    Game Name    -->
-    <div class="game-name">
-      <div class="text-3xl text-white" style="font-family: Reggae One, cursive">Tambola King</div>
-      <i
-        class="fas fa-chess-king fa-2x"
-        style="color: #ff6348; transform: rotate(-25deg)"
-      ></i>
+  <body class="bg-blue-200 h-screen">
+    <div>
+      <!--    Game Name    -->
+      <div class="game-name">
+        <div
+          class="text-3xl text-white"
+          style="font-family: Reggae One, cursive"
+        >
+          Tambola King
+        </div>
+        <i
+          class="fas fa-chess-king fa-2x"
+          style="color: #ff6348; transform: rotate(-25deg)"
+        ></i>
+      </div>
     </div>
-
     <!--     Header     -->
-  </div>
-    <!-- <div class="header">
-    </div> -->
-    <!--    Countdown    -->
-    <div class="countdown">
-      <div class="title" style="margin-top: 0">
-        <h2 class="text-gray-100">Next Game Start in :</h2>
-      </div>
+    <div
+      class="
+        sale-dialog
+        opacity-0
+        transition
+        duration-300
+        ease-in-out
+        pointer-events-none
+        fixed
+        w-full
+        h-full
+        top-0
+        left-0
+        flex
+        items-center
+        justify-center
+      "
+    >
+      <div
+        class="dialog-overlay absolute w-full h-full bg-gray-900 opacity-50"
+      ></div>
 
-      <div class="content flex justify-evenly">
-        <div class="days-container">
-          <p class="big-text" id="days">0</p>
-          <span>Days</span>
-        </div>
-        <div class="hours-container">
-          <p class="big-text" id="hours">0</p>
-          <span>Hours</span>
-        </div>
-        <div class="minutes-container">
-          <p class="big-text" id="minutes">0</p>
-          <span>Mins</span>
-        </div>
-        <div class="seconds-container">
-          <p
-            class="big-text animate__animated animate__fadeInDown infinite"
-            id="seconds"
-          >
-            0
-          </p>
-          <span>Secs</span>
+      <div
+        class="
+          dialog-container
+          bg-white
+          w-11/12
+          md:max-w-md
+          mx-auto
+          rounded
+          shadow-lg
+          z-50
+          overflow-y-auto
+        "
+      >
+        <!-- Add margin if you want to see some of the overlay behind the dialog-->
+        <div class="dialog-content py-4 text-left px-6">
+          <!--Title-->
+          <div class="flex justify-between items-center pb-3">
+            <p class="text-2xl font-bold">Confirm Checkout!</p>
+            <div class="dialog-close cursor-pointer z-50">
+              <svg
+                class="fill-current text-black"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!--Body-->
+          <input
+            type="text"
+            required
+            placeholder="Customer Name"
+            id="customer-name"
+            class="outline-none ring rounded-lg border-blue-500 p-2 w-full"
+          />
+          <br />
+          <input
+            type="number"
+            required
+            placeholder="Customer Phone"
+            id="customer-phone"
+            class="outline-none ring rounded-lg border-blue-500 my-5 p-2 w-full"
+          />
+          <p>Selected Ticket(s)</p>
+          <div id="selected-list" class="grid grid-cols-7 gap-1"></div>
+          <!-- <p class="text-sm">(Tap to remove)</p> -->
+
+          <div class="text-blue-500 text-bold text-4xl" id="final-price">
+            Rs. 400
+          </div>
+
+          <!--Footer-->
+          <div class="flex justify-end pt-2">
+            <button
+              class="
+                dialog-close
+                px-4
+                bg-transparent
+                p-3
+                rounded-lg
+                text-blue-500
+                hover:bg-gray-100
+                hover:text-blue-400
+                mr-2
+              "
+            >
+              Close
+            </button>
+            <button
+              class="
+                px-4
+                bg-blue-500
+                p-3
+                rounded-lg
+                text-white
+                hover:bg-blue-400
+              "
+              id="submit-btn"
+            >
+              Sale
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="text-5xl font-extrabold flex justify-center">
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-        Payments
-      </span>
+    <div
+      style="overflow-y: scroll"
+      class="
+        history-dialog
+        py-10
+        opacity-0
+        pointer-events-none
+        fixed
+        w-full
+        h-full
+        top-0
+        left-0
+        flex
+        items-center
+        justify-center
+      "
+    >
+      <div class="absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+      <div
+        style="position: absolute; max-height: 80vh"
+        class="
+          history-dialog-container
+          bg-white
+          w-11/12
+          md:max-w-md
+          mx-auto
+          rounded
+          shadow-lg
+          z-50
+          overflow-y-auto
+        "
+      >
+        <!-- Add margin if you want to see some of the overlay behind the dialog-->
+        <div class="history-dialog-content py-4 text-left px-6">
+          <!--Title-->
+          <div class="flex flex-row justify-between pb-3">
+            <p class="text-2xl font-bold">Previous Sales</p>
+            <div class="history-dialog-close cursor-pointer">
+              <svg
+                class="fill-current text-black"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <div id="sold-tickets" class="py-3 text-sm">
+            <div class="flex text-gray-700 rounded-md px-2 py-2 my-sm">
+              <span class="text-gray-500">TNo</span>
+              <div class="flex-grow font-medium px-2">Name</div>
+              <div class="text-sm font-normal text-gray-500 tracking-wide">
+                Phone
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="text-blue-500">Total Collections</div>
+            <div class="text-blue-500 text-bold text-4xl" id="total-collection">
+              Rs. 400
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- <img class="loading-gif" src="./assets/loading.gif" /> -->
+
+    <div class="text-3xl text-blue-500 font-bold flex justify-between">
+      <span></span>
+      <span> Agent Portal </span>
+      <i id='logout-btn' class="fas fa-sign-out-alt"></i>
+    </div>
+    <div class="flex flex-row justify-between items-center">
+      <div class="text-blue-500">
+        <div class="text-1xl p-0">Hey there</div>
+        <div id="greet-user" class="text-3xl font-black p-0"></div>
+      </div>
+      <button
+        class="
+          history-dialog-open
+          px-4
+          h-12
+          bg-blue-500
+          p-3
+          rounded-lg
+          text-white
+          hover:bg-blue-400
+          text-bold
+        "
+        id="submit-btn"
+      >
+        <i class="fas fa-history"></i> History
+      </button>
+    </div>
     <div class="progress-bar-container">
       <div class="progress-bar"></div>
     </div>
+
     <div class="pt-10 text-4xl text-center text-blue-500">Tickets</div>
-    <div id="tickets-container" style="height: 500px"></div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <div class="flex justify-between">
+      <div>
+        <span class="bg-green-500 h-2 w-2 m-2 rounded-full"></span
+        ><span>Available</span>
+      </div>
+      <div>
+        <span class="bg-red-300 h-2 w-2 m-2 rounded-full"></span>
+        <span>Booked</span>
+      </div>
+      <div>
+        <span class="bg-blue-500 h-2 w-2 m-2 rounded-full"></span
+        ><span>Selected</span>
+      </div>
+    </div>
+    <div id="tickets-container">
+      <div id="cell-container" class="grid grid-cols-7 gap-1"></div>
+    </div>
+    <div
+      id="sale-btn"
+      class="
+        sale-dialog-open
+        rounded-full
+        fixed
+        bottom-10
+        right-10
+        h-20
+        w-20
+        flex
+        justify-center
+        items-center
+        bg-blue-500
+        text-white
+        font-semibold
+        shadow-md
+        hidden
+        animate__animated animate__zoomOutRight
+      "
+    >
+      Sale (3)
+    </div>
     <script>
-      AOS.init()
+      //toggleSaleDialog()
+      document
+        .querySelector('.sale-dialog-open')
+        .addEventListener('click', () => {
+          toggleSaleDialog()
+        })
+      const overlay = document.querySelector('.dialog-overlay')
+      // overlay.addEventListener('click', toggleSaleDialog)
+
+      var closeSaleDialog = document.querySelectorAll('.dialog-close')
+      for (let i = 0; i < closeSaleDialog.length; i++)
+        closeSaleDialog[i].addEventListener('click', toggleSaleDialog)
+
+      function toggleSaleDialog() {
+        const body = document.querySelector('body')
+        const dialog = document.querySelector('.sale-dialog')
+        dialog.classList.toggle('opacity-0')
+        dialog.classList.toggle('pointer-events-none')
+        body.classList.toggle('dialog-active')
+      }
+      document
+        .querySelector('.history-dialog-open')
+        .addEventListener('click', () => {
+          toggleHistoryDialog()
+        })
+      var closeHistoryDialog = document.querySelectorAll(
+        '.history-dialog-close'
+      )
+      for (let i = 0; i < closeHistoryDialog.length; i++)
+        closeHistoryDialog[i].addEventListener('click', toggleHistoryDialog)
+
+      //toggleHistoryDialog()
+      function toggleHistoryDialog() {
+        const body = document.querySelector('body')
+        const dialog = document.querySelector('.history-dialog')
+        dialog.classList.toggle('opacity-0')
+        dialog.classList.toggle('pointer-events-none')
+        body.classList.toggle('dialog-active')
+      }
     </script>
-    
-    <script src="countdown.js" type="module"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="agent.js" type="module"></script>
   </body>
 </html>

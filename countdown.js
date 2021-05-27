@@ -29,7 +29,6 @@ function setDateAndTime(time) {
         else
             gameTimeEl.innerHTML = `${format(hoursRemaining - 12)}:${format(minsRemaining)} PM`
     }
-
 }
 function countDown() {
     const currentDate = new Date();
