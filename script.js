@@ -2,15 +2,28 @@
 
 import { getAllTickets } from "./api.config.js";
 
-axios.get(getAllTickets).then((res) => {
+axios.get(getAllTickets).then(async (res) => {
   const progress = document.querySelector(".progress-bar-container");
   progress.remove();
-  res.data.forEach((ele) => {
-    createAndAppendTicket(ele);
-  });
+
+  for (let i = 0; i < res.data.length; i++) {
+    console.log(res.data[i])
+    createAndAppendTicket(res.data[i]);
+
+    //wait for a second every 50 ticket
+    if(i%50==0)
+      await sleep(1000)
+
+  }
 });
 
-async function createAndAppendTicket(ticket) {
+function sleep(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms)
+  })
+}
+
+function createAndAppendTicket(ticket) {
   var ticketString = ticket.ticket;
   var ticketArray = JSON.parse(ticketString);
 
@@ -75,8 +88,8 @@ async function createAndAppendTicket(ticket) {
 }
 
 function bottomComponent() {
-  const comp = document.createElement("button");
-  comp.classList.add(
+  const buyButton = document.createElement("button");
+  buyButton.classList.add(
     "buy-btn",
     "bg-white",
     "text-blue-500",
@@ -92,13 +105,13 @@ function bottomComponent() {
   );
 
   //   buy btn to payment page
-  const buyBtn = document.querySelector(".buy-btn");
-  buyBtn.addEventListener("click", () => {
+  // const buyBtn = document.querySelector(".buy-btn");
+  buyButton.addEventListener("click", () => {
     location.replace("./payment.html");
   });
 
-  comp.innerHTML = "Buy";
-  return comp;
+  buyButton.innerHTML = "Buy";
+  return buyButton;
 }
 
 const contactAgents = document.querySelector(".contact-agent");
