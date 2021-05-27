@@ -113,10 +113,3 @@ function bottomComponent() {
   buyButton.innerHTML = "Buy";
   return buyButton;
 }
-
-const contactAgents = document.querySelector(".contact-agent");
-
-contactAgents.addEventListener("click", () => {
-  // console.log('clicked!');
-  location.href = "./contact-agent.html";
-});
