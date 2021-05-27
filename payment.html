@@ -17,9 +17,47 @@
       rel="stylesheet"
     />
 
+    <!--    animate.style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+    </style>
+
     <title>Payment</title>
   </head>
-  <body>
+
+  <body class="h-screen bg-blue-200 md:mx-auto mx-3">
+    <!--    Game Name    -->
+    <div
+      class="
+        game-name
+        max-w-3xl
+        mx-auto
+        my-5
+        bg-blue-500
+        flex
+        justify-center
+        items-center
+        py-5
+        rounded-lg
+      "
+    >
+      <div class="text-3xl text-white" style="font-family: Reggae One, cursive">
+        Tambola Kings
+      </div>
+      <div>
+        <i
+          class="fas fa-chess-king fa-2x"
+          style="color: #ff6348; transform: rotate(-25deg); margin-left: 10px"
+        ></i>
+      </div>
+    </div>
+
     <div
       class="
         flex
@@ -29,34 +67,145 @@
         mx-auto
         my-5
         p-4
-        bg-purple-700
+        bg-blue-500
         font-semibold
         rounded-lg
+        animate__animated animate__fadeInUp
       "
-      style="font-family: Arial, Helvetica, sans-serif"
+      style="font-family: Titillium Web, sans-serif"
     >
       <span> Payment </span>
     </div>
 
     <!--    Payment body    -->
 
-    <!--nav  -->
-    <div class="max-w-3xl mx-auto p-3 border-3 bg-purple-700 rounded-lg">
-      <div class="flex flex-row items-center mt-6">
-        <a href="./index.html"
-          ><i class="fas fa-times fa-2x text-gray-100 p-4 rounded-lg"></i
-        ></a>
-        <h2
-          class="mx-auto text-gray-100 text-2xl"
-          style="font-family: monospace; letter-spacing: 5px"
+    <div
+      class="
+        max-w-3xl
+        mx-auto
+        p-3
+        border-3
+        bg-blue-500
+        rounded-2xl
+        animate__animated animate__fadeInUp
+      "
+    >
+      <!--    top    -->
+      <div
+        class="bg-white mx-auto rounded-lg mt-4"
+        style="width: 100px; height: 3px"
+      ></div>
+
+      <div class="mt-8 relative">
+        <div class="absolute -top-14 right-0 inline-block">
+          <a href="./index.html"
+            ><i class="fas fa-times fa-2x text-gray-100 p-2 rounded-lg"></i
+          ></a>
+        </div>
+        <div class="text-center text-2xl text-gray-50">
+          <p>For any queries call us on</p>
+          <a href="tel:+91-9862280238" style="border-bottom: 3px solid #fff">
+            9862280238
+          </a>
+        </div>
+        <!-- <div
+          class="text-gray-100 text-2xl absolute mt-2"
+          style="
+            font-family: monospace;
+            letter-spacing: 3px;
+            transform: translateX(-50%);
+            margin-left: 50%;
+          "
         >
           QR CODE
-        </h2>
+        </div> -->
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mt-16">
+        <div>
+          <div class="text-gray-50 text-2xl">Click below 👇</div>
+          <div
+            class="
+              font-semibold
+              flex
+              justify-center
+              bg-gray-50
+              text-center text-blue-500 text-xl
+              rounded-xl
+              mt-4
+            "
+          >
+            <a
+              class="p-4"
+              href="upi://pay?pa=takhejohn7@oksbi&pn=takhe%20Tari&aid=uGICAgICN6ZP3PQ"
+            >
+              G pay
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-gray-50 text-2xl">Click below 👇</div>
+          <div
+            class="
+              font-semibold
+              flex
+              justify-center
+              bg-gray-50
+              text-center text-blue-500 text-xl
+              rounded-xl
+              mt-4
+            "
+          >
+            <a
+              class="p-4"
+              href="upi://pay?pa=takhejohn7@oksbi&pn=takhe%20Tari&aid=uGICAgICN6ZP3PQ"
+            >
+              PhonePe
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!--     payment-details     -->
+      <!-- <div class="flex flex-col items-center mt-32 text-2xl text-white">
+        <div class="flex flex-row">
+          <div>
+            <p>Pay to :</p>
+          </div>
+          <div
+            class="name ml-4"
+            style="
+              font-family: monospace;
+              align-items: center;
+              border-bottom: 3px solid #fff;
+            "
+          >
+            <a
+              href="upi://pay?pa=takhejohn7@oksbi&pn=takhe%20Tari&aid=uGICAgICN6ZP3PQ"
+              >Takhe Tari</a
+            >
+          </div>
+        </div>
+        <div class="flex flex-row">
+          <div class="contact-number">
+            <p>Contact Number:</p>
+          </div>
+          <div class="ml-2">
+            <a href="tel:+91-9862280238"> 9862280238 </a>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="grid grid-cols-3 gap-2 place-items-center mt-20">
+        <div class="bg-gray-50" style="width: 100px; height: 2px"></div>
+        <div class="text-gray-50 text-2xl">OR Scan</div>
+        <div class="bg-gray-50" style="width: 100px; height: 2px"></div>
       </div>
 
       <!--    QR CODES      -->
-      <div class="qr-codes">
-        <div class="qr-container flex justify-center items-center mt-12">
+      <div class="qr-codes grid grid-cols-2 place-items-center gap-4 mt-12">
+        <div class="qr-container flex justify-center items-center">
           <div class="grid place-content-center bg-white p-4 rounded-2xl">
             <div>
               <img src="./assets/gpayUPI.png" alt="gpay" />
@@ -72,16 +221,16 @@
           </div>
         </div>
 
-        <div class="qr-container flex justify-center items-center mt-6">
+        <div class="qr-container flex justify-center items-center">
           <div class="grid place-content-center bg-white p-4 rounded-2xl">
-            <div>
+            <div class="my-2">
               <img src="./assets/phonepeUPI.png" alt="PhonePe" />
             </div>
             <div class="footer text-center">
               <div class="text">
                 <span class="text-xl text-gray-800">Scan to pay on: </span>
               </div>
-              <div class="icon text-3xl mt-3">PhonePe</div>
+              <div class="icon text-2xl mt-3">PhonePe</div>
             </div>
           </div>
         </div>
