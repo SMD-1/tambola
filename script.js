@@ -7,7 +7,7 @@ axios.get(getAllTickets).then(async (res) => {
   progress.remove();
 
   for (let i = 0; i < res.data.length; i++) {
-    console.log(res.data[i])
+    //console.log(res.data[i])
     createAndAppendTicket(res.data[i]);
 
     //wait for a second every 50 ticket
