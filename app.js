@@ -67,7 +67,7 @@ function createAndAppendTicket(ticket) {
 
 
 viewBtn.addEventListener('click', () => {
-  removeElements('.player-ticket-container')
+  //removeElements('.player-ticket-container')
   axios.get(`${getTicket}?game_id=1&ticket_id=${ticketInput.value}`)
     .then((res) => {
       if (res.data[0].customer_name == 'Not Booked'){
