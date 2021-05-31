@@ -70,8 +70,8 @@ function markStrikes() {
 function speak(text) {
   console.log('speaking = ' + text)
   var msg = new SpeechSynthesisUtterance(text);
-  msg.volume = 1;
-  msg.rate = 3;
+  // msg.volume = 1;
+  // msg.rate = 3;
   window.speechSynthesis.speak(msg);
 }
 function removeOldTickets(className) {
@@ -138,6 +138,7 @@ function refresh() {
       if (state.live != res.data.game_is_live) {
         if (res.data.game_is_live == true) {
           speak('The game is live now!')
+          removeCountdown()
         }
         else
           speak('The game has ended, Thanks for playing!')
@@ -202,3 +203,11 @@ setInterval(() => {
   refresh()
 }, 1000);
 
+function removeCountdown(){
+  if(document.querySelector('.countdown'))
+  {
+      console.log('removed counter')
+      document.querySelector('.countdown').remove()
+  }
+
+}

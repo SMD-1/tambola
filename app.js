@@ -8,7 +8,7 @@ const viewBtn = document.getElementById('view-ticket-button')
 
 function removeElements(elementToRemove) {
   const elements = document.querySelectorAll(elementToRemove)
-  console.log(elements)
+  //console.log(elements)
   if (elements) {
     elements.forEach(element => {
       element.remove()
@@ -70,6 +70,10 @@ viewBtn.addEventListener('click', () => {
   removeElements('.player-ticket-container')
   axios.get(`${getTicket}?game_id=1&ticket_id=${ticketInput.value}`)
     .then((res) => {
+      if (res.data[0].customer_name == 'Not Booked'){
+        alert('Entered ticked was not booked!')
+        return
+      }
       const customerName = res.data[0].customer_name
       console.log(res.data)
       axios.get(`${getTicket}?game_id=1&ticket_id=&customer_name=${customerName}`)

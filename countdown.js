@@ -38,6 +38,9 @@ function countDown() {
     const minutes = Math.floor((totalSeconds / 60) % 60);
     const seconds = Math.floor(totalSeconds % 60);
 
+    //return if time out
+    if(totalSeconds<0) return
+
     DaysEl.innerHTML = format(days);
     HoursEl.innerHTML = format(hours);
     MinutesEl.innerHTML = format(minutes);

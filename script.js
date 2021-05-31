@@ -113,3 +113,8 @@ function bottomComponent() {
   buyButton.innerHTML = "Buy";
   return buyButton;
 }
+
+
+//redirecting to game page 
+console.log('redirecting')
+window.location = './gameplay.html'
