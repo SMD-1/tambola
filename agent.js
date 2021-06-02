@@ -33,6 +33,7 @@ getOwnBookedTickets()
 function getOwnBookedTickets() {
     const soldTicketsContainer = document.getElementById('sold-tickets')
     const collectionAmount = document.getElementById('total-collection')
+    const earningAmount = document.getElementById('total-earning')
 
     axios.get(`${getAllTickets}?booked_by=${currentUser.user_id}`, {
         'Authorization':
@@ -64,6 +65,8 @@ function getOwnBookedTickets() {
                 soldTicketsContainer.appendChild(cell)
             })
             collectionAmount.innerHTML = 'Rs. ' + res.data.length * 100
+            earningAmount.innerHTML = 'Rs. ' + res.data.length * 30
+
         })
 }
 

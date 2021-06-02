@@ -31,21 +31,22 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body class="bg-blue-200 h-screen">
-    <div>
-      <!--    Game Name    -->
-      <div class="game-name">
-        <div
-          class="text-3xl text-white"
-          style="font-family: Reggae One, cursive"
-        >
-          Tambola King
-        </div>
+    <div class="game-name" style="    border-radius: 10px;
+    max-width: 700px;
+    background: #3b82f6;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    padding: 10px 0;">
+      <div class="text-3xl text-white" style="font-family: Reggae One, cursive">Tambola Kings</div>
         <i
           class="fas fa-chess-king fa-2x"
           style="color: #ff6348; transform: rotate(-25deg)"
         ></i>
-      </div>
-    </div>
+     </div>
+    </div>  
     <!--     Header     -->
     <div
       class="
@@ -223,9 +224,25 @@
             </div>
           </div>
           <div>
-            <div class="text-blue-500">Total Collections</div>
-            <div class="text-blue-500 text-bold text-4xl" id="total-collection">
-              Rs. 400
+            <div class="grid grid-cols-2">
+              <div>
+                <div class="text-blue-500">Total Collections</div>
+                <div
+                  class="text-blue-500 text-bold text-4xl"
+                  id="total-collection"
+                >
+                  Rs. 400
+                </div>
+              </div>
+              <div>
+                <div class="text-blue-500">Total Earning</div>
+                <div
+                  class="text-blue-500 text-bold text-4xl"
+                  id="total-earning"
+                >
+                  Rs. 400
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -235,7 +252,7 @@
     <div class="text-3xl text-blue-500 font-bold flex justify-between">
       <span></span>
       <span> Agent Portal </span>
-      <i id='logout-btn' class="fas fa-sign-out-alt"></i>
+      <i id="logout-btn" class="fas fa-sign-out-alt"></i>
     </div>
     <div class="flex flex-row justify-between items-center">
       <div class="text-blue-500">

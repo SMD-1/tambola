@@ -11,7 +11,7 @@ axios.get(getAllTickets).then(async (res) => {
     createAndAppendTicket(res.data[i]);
 
     //wait for a second every 50 ticket
-    if(i%50==0)
+    if (i % 50 == 0)
       await sleep(1000)
 
   }
@@ -60,9 +60,14 @@ function createAndAppendTicket(ticket) {
     ele1.forEach((ele2) => {
       const cell = document.createElement("div");
       cell.classList.add("cell", "md:text-xl", "lg:text-3xl", "text-sm");
-      if (ele2 == null) cell.innerHTML = "&nbsp;";
-      else cell.innerHTML = ele2;
+      if (ele2 == null) {
 
+        cell.innerHTML = "&nbsp;";
+        cell.classList.add('bg-gray-300')
+      }
+      else {
+        cell.innerHTML = ele2;
+      }
       cellContainer.appendChild(cell);
     });
   });
@@ -116,5 +121,5 @@ function bottomComponent() {
 
 
 //redirecting to game page 
-console.log('redirecting')
-window.location = './gameplay.html'
+//console.log('redirecting')
+//window.location = './gameplay.html'

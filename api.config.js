@@ -5,5 +5,8 @@ const gamesStatus = prefix + 'api/gamesGet/1/'
 const getAllTickets = prefix + 'api/tickets/'
 const getTicket = prefix + 'api/ticketsGet/'
 const getToken = prefix + 'api/getToken/'
+const getProfiles = prefix + 'api/profiles/'
 
-export { gamesStatus, getTicket, getAllTickets, getToken }
+
+
+export { gamesStatus, getTicket, getAllTickets, getToken, getProfiles }
